@@ -7,7 +7,12 @@ import { TodoList } from '../TodoList'
 import { CreateTodoButton } from '../CreateTodo'
 import { TodoItem } from "../TodoItem/index.js"
 import {Modal} from "../Modal"
+import { TodoError } from '../TodosLoading/TodoError'
+import { TodoLoading } from '../TodosLoading/TodoLoading'
+import { Empty } from '../TodosLoading/Empty'
+
 const defaultTodos = [
+
 
   { text: "Cortar cebolla", completed: true},
   { text: "Tomar el curso", completed: true},
@@ -34,9 +39,9 @@ function AppUi() {
         <TodoCounter/>
         <TodoSearch/>
         <TodoList className ="todolist">
-        {error &&  <p  className ="todolistp">Desesperate, hubo un error ...</p>}
-        {loading && <p className ="todolistp">Estamos cargando, no desesperes...</p>}
-        {(!loading && !searchTodos.length) && <p className ="todolistp">Crea tu primer TODO!</p>}
+        {error &&  <TodoError error= {error}/>}
+        {loading && <TodoLoading/>}
+        {(!loading && !searchTodos.length) && <Empty/>}
 
         {searchTodos.map(todo => (
         <TodoItem 
@@ -52,9 +57,9 @@ function AppUi() {
         </TodoList>
         {openModal && (
         <Modal>
-        <button onClick={()=> setOpenModal(false)}>x</button>
-      <Form/>
-      </Modal>
+          <button class="btn-x" onClick={()=> setOpenModal(false)}>x</button>
+          <Form/>
+        </Modal>
       
       )}
       <CreateTodoButton setOpenModal={setOpenModal}></CreateTodoButton>

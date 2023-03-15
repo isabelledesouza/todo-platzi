@@ -1,0 +1,80 @@
+/*Animaciones */
+*{
+  margin:0;
+  padding: 0; 
+
+}
+
+
+
+
+.container {
+  max-width: 1200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+}
+.container-smog {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#smog3  {
+  
+  opacity: .3;
+  animation: steamLarge 3s ease-out infinite ;
+}
+
+#smog {
+  animation:  steamLarge  6s ease-out infinite;
+}
+
+#smog2 {
+  opacity: .3;
+  animation: steamLarge 3s ease-out infinite;
+}
+#smog1 {
+  opacity: .3;
+  animation: steamLarge 3s ease-out infinite alternate; 
+}
+
+
+@keyframes steamLarge {
+  10%{
+    //stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  80% {
+    //stroke-dashoffset: 0;
+    opacity: 0.6;
+  }
+  100%{
+    //stroke-dashoffset: 0;
+    opacity:.3;
+    
+  }
+}
+#teaBag {
+transform-origin: top left;
+
+  //transform:  rotate(-2deg);
+  animation: rotar 2s ease-out infinite  ;
+}
+#teaMug {
+
+}
+@keyframes rotar {
+  10% {
+      transform:  rotate(-1deg);
+  }
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  
+}

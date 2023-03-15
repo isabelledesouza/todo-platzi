@@ -54,6 +54,37 @@ background: linear-gradient(183.28deg, rgba(200, 216, 127, 0.3196) 14.54%, rgba(
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.btn-x {
+ width: 64px;
+  height: 64px;
+  font-weight: 500;
+font-size: 2rem;
+color: #fefff7;
+background-color: #e1ee32;
+padding: 10px 30px;
+border: none;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+text-transform: uppercase;
+z-index: 1;
+margin-bottom: 25%;
+left: 80%;
+}
+
+.btn-x:hover{
+
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #fff;
+color: #0066cc;
+border: solid 2px #0066cc;
+}
+
 
 .App-link {
   color: #61dafb;

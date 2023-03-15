@@ -7,10 +7,11 @@ const TodoContext = React.createContext();
 
 function TodoProvider (props) {
    // aqui chamamos nosso custom hook  diretamente
-  const {item: todos, 
+  const {
+    item: todos, 
     saveItem:saveTodos,
-  loading,
-  error, 
+    loading,
+     error, 
 
   } = useLocalStorage("Todo_v1",[])
 
@@ -34,16 +35,7 @@ if (!searchValue.length >=1 ) {
   })
   
 }
-// crear nuevo obj
-const addTodo =  (text) => {
-  const newTodos = [...todos]
-  newTodos.push({
-    completed: false,
-    text
-   
-  })
-  saveTodos(newTodos)
-}
+
 const completeTodos = (text) => {
   //find index todo por todo qual tem o mesmo texto
  const todoIndex = todos.findIndex(todo=> todo.text === text);
@@ -53,6 +45,17 @@ const completeTodos = (text) => {
  
 console.log( todos[todoIndex].completed )
 
+  }
+  const addTodo = (text) => {
+   //crear un nuevo objeto
+   // crea un nuevo un array 
+   // llama el metodo push 
+   const newTodos = [...todos] 
+   newTodos.push({
+    completed: false, 
+    text,
+   })
+   saveTodos(newTodos)
   }
   const deleteTodos = (text) => {
     //find index todo por todo qual tem o mesmo texto, prova com y sen array vazio545
@@ -78,8 +81,8 @@ console.log( todos[todoIndex].completed )
             searchTodos,
             openModal,
             setOpenModal,
-            addTodo
-
+            addTodo,
+           
         }}>
             {/*qualquer componentes podemos chamar aqui*/}
             {props.children}

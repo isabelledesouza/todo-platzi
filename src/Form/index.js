@@ -1,33 +1,42 @@
 import React from 'react'
 import { TodoContext } from '../TodoContext'
-
+import  "./index.css"
 function Form(props) {
- const {
-    addTodo,
- } = React.useContext(TodoContext);
-    
+ //guardar
+ const [newTodoValue, setNewTodoValue] = React.useState("")
  
- 
- const OnCancel = () => {
-     props.setOpenModal(false)
-    }
-  const onSubmit= () => {
+  //consumir el estado
+ const {addTodo,
+  setOpenModal
+
+} = React.useContext(TodoContext);
+const OnCancel = () => {
+    setOpenModal(false)
+}
+const onSubmit= (event) => {
+    event.preventDefault();
+    addTodo(newTodoValue)
+    setOpenModal(false)
+}
+  const onChange= (event) => {
+  setNewTodoValue(event.target.value)
+}
+  return (
     
-  }
-  
-    return (
-    <form onSubmit={onSubmit}>
-      <label>...</label>
-      {/* ir hacia abajo */}
+  <form onSubmit={onSubmit} >
+    <label>...</label>
+     +{/* ir hacia abajo */}
       <textarea 
+       value= {newTodoValue}
+       onChange= {onChange} 
         placeholder='My task'
       />
-      <div>
-        <button type='button' onClick={OnCancel}>Cancelar</button>
+      <div className='TodoForm-buttonContainer'>
+        <button className="TodoForm-button TodoForm-button--cancel" type='button' onClick={OnCancel}>Cancelar</button>
         {/*type submit para nao receber o evento onClick e sim poder enviar*/}
-        <button type="submit">Add</button>
+        <button  className="TodoForm-button TodoForm-button--cancel"type="submit">Add</button>
       </div>
-    </form>
+  </form>
   )
 }
 
