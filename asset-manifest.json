@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/todo-platzi/static/css/main.effbde8b.css",
+    "main.js": "/todo-platzi/static/js/main.efba9ee6.js",
+    "static/media/smallbh.png": "/todo-platzi/static/media/smallbh.80aef4816990f13d8b1d.png",
+    "index.html": "/todo-platzi/index.html",
+    "main.effbde8b.css.map": "/todo-platzi/static/css/main.effbde8b.css.map",
+    "main.efba9ee6.js.map": "/todo-platzi/static/js/main.efba9ee6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.effbde8b.css",
+    "static/js/main.efba9ee6.js"
+  ]
+}
